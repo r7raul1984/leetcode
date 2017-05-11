@@ -2,12 +2,8 @@ package HammingDistance;
 
 import java.util.ArrayList;
 import java.util.List;
-
+//#461
 public class HammingDistance {
-
-  public static void main(String[] args) {
-
-  }
 
   public int hammingDistance(int x, int y) {
     int result = 0;
