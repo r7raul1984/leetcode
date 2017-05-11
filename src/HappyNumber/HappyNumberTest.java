@@ -6,7 +6,7 @@ import static org.junit.Assert.*;
 
 public class HappyNumberTest {
 
-  @Test public void testHammingDistance() throws Exception {
+  @Test public void testHappyNumber() throws Exception {
     HappyNumber happyNumber = new HappyNumber();
     assertEquals(true, happyNumber.isHappy(1));
     assertEquals(false, happyNumber.isHappy(2));
