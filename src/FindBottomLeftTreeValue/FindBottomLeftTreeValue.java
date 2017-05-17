@@ -15,7 +15,7 @@ public class FindBottomLeftTreeValue {
     int count = 0;
     int result = -1;
     do {
-      List<TreeNode> newChild = new ArrayList<>();
+      List<TreeNode> newChild = new LinkedList<TreeNode>();
       for (TreeNode child : childs) {
         if (child.left != null) {
           if (count == 0) {
@@ -32,7 +32,7 @@ public class FindBottomLeftTreeValue {
           newChild.add(child.right);
         }
       }
-      childs = new ArrayList<TreeNode>(newChild);
+      childs = new LinkedList<TreeNode>(newChild);
       count = 0;
     } while (!childs.isEmpty());
     return result;
