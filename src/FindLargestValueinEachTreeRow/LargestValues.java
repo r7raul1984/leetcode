@@ -11,14 +11,13 @@ public class LargestValues {
 
   public List<Integer> largestValues(TreeNode root) {
 
-    List<Integer> result = new ArrayList<>();
+    List<Integer> result = new ArrayList<>(100);
     if (root == null) {
       return result;
     }
     result.add(root.val);
 
-    List<Integer> collector = new ArrayList<>();
-    List<TreeNode> childs = new ArrayList<>();
+    List<TreeNode> childs = new ArrayList<>(500);
 
     if (root.left != null) {
       childs.add(root.left);
@@ -26,8 +25,7 @@ public class LargestValues {
     if (root.right != null) {
       childs.add(root.right);
     }
-    findLargest(childs, collector);
-    result.addAll(collector);
+    findLargest(childs, result);
     return result;
   }
 
@@ -44,7 +42,7 @@ public class LargestValues {
       }
     });
     result.add(nodes.get(0).val);
-    List<TreeNode> childes = new ArrayList<>();
+    List<TreeNode> childes = new ArrayList<>(500);
     for (TreeNode node : nodes) {
       if (node.left != null) {
         childes.add(node.left);
