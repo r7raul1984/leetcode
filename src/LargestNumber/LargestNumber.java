@@ -27,6 +27,9 @@ public class LargestNumber {
       if (maxDigitIndex.size() == 1) {
         isuse[maxDigitIndex.get(0)] = 1;
         result += nums[maxDigitIndex.get(0)];
+      }else if(maxDigitIndex.size() > 1){
+        int index = maxDigitIndex.get(0);
+
       }
     }
     return result;
