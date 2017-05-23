@@ -36,3 +36,42 @@ public class CombinationSum {
     So actually, sorting the numbers CAN be useful, if you add the condition I stated to the for loop. Otherwise, sorting the numbers is useless because you aren't using the fact that they're sorted to prune your possible results.
 */
 
+/*
+  public List<List<Integer>> combinationSum(int[] candidates, int target) {
+    Set<List<Integer>> result = new HashSet<>();
+    List<Integer> collector = new ArrayList<>();
+    combinationSum1(candidates, target, collector);
+    int start = 0;
+    int total = 0;
+    for (int i = 0; i < collector.size(); i++) {
+      total += collector.get(i);
+      if (total == target) {
+        List<Integer> temp = new ArrayList<>();
+        for (int j = i; j >= start; j--) {
+          temp.add(collector.get(j));
+        }
+        result.add(temp);
+        total = 0;
+        start = i + 1;
+      }
+
+    }
+
+    return new ArrayList<>(result);
+  }
+  private void combinationSum1(int[] candidates, int target, List<Integer> collector) {
+    for (int candidate : candidates) {
+      if (candidate == 0) {
+        continue;
+      }
+      int rs = target - candidate;
+      if (rs < 0) {
+        return;
+      }
+      if (rs == 0) {
+        collector.add(candidate);
+      } else {
+        combinationSum1(candidates, rs, collector);
+      }
+    }
+  }*/
