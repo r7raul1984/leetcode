@@ -9,6 +9,7 @@ public class Sum3 {
 
   public List<List<Integer>> threeSum(int[] nums) {
     List<List<Integer>> list = new ArrayList<>();
+    Arrays.sort(nums);
     backtrack(list, new ArrayList<>(), nums, 0, 0);
     list = new ArrayList<>(new HashSet<>(list));
     return list;
@@ -26,8 +27,11 @@ public class Sum3 {
       }
     } else {
       for (int i = start; i < nums.length; i++) {
+        if (nums[i] > sum)
+          return;
         tempList.add(nums[i]);
-        backtrack(list, tempList, nums, sum - nums[i], i + 1); // not i + 1 because we can reuse same elements
+        backtrack(list, tempList, nums, sum - nums[i],
+            i + 1); // not i + 1 because we can reuse same elements
         tempList.remove(tempList.size() - 1);
       }
     }
